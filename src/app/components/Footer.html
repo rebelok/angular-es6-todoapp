@@ -1,0 +1,30 @@
+<footer class="footer">
+  <span class="todo-count">
+    <strong>{{$ctrl.activeCount || 'No'}}</strong> {{$ctrl.activeCount === 1 ? 'item' : 'items'}} left
+  </span>
+  <ul class="filters">
+    <li key="filter">
+      <a ng-class="{'selected': $ctrl.isShowAllSelected()}"
+         ng-click="$ctrl.showAll()"
+      >
+        All
+      </a>
+      <a ng-class="{'selected': $ctrl.isShowActiveSelected()}"
+         ng-click="$ctrl.showActive()"
+      >
+        Active
+      </a>
+      <a ng-class="{'selected': $ctrl.isShowCompletedSelected()}"
+         ng-click="$ctrl.showCompleted()"
+      >
+        Completed
+      </a>
+    </li>
+  </ul>
+  <button ng-if="$ctrl.hasCompletedItems()"
+          class="clear-completed"
+          ng-click="$ctrl.handleClear()"
+  >
+    Clear completed
+  </button>
+</footer>

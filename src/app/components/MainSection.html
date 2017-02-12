@@ -1,0 +1,18 @@
+<section class="main">
+  <input ng-if="$ctrl.hasItems"
+         class="toggle-all"
+         type="checkbox"
+         ng-checked="$ctrl.areAllDone"
+         ng-click="$ctrl.completeAll()"
+  />
+  <ul class="todo-list">
+    <todo-item
+        ng-repeat="todo in $ctrl.todos"
+        todo="todo"
+        on-destroy="$ctrl.handleDestroy(id)"
+        on-change="$ctrl.handleChange(id)"
+        on-save="$ctrl.handleSave(todo)"
+        start-edit="$ctrl.startEdit(id)"
+    ></todo-item>
+  </ul>
+</section>

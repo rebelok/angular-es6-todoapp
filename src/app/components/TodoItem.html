@@ -1,0 +1,27 @@
+<li ng-class="{'editing': $ctrl.isEditing(), 'completed': $ctrl.todo.completed}">
+  <todo-text-input
+      ng-if="$ctrl.isEditing()"
+      text="$ctrl.todo.text"
+      editing="true"
+      on-save="$ctrl.handleSave(text)"
+  ></todo-text-input>
+  <div
+      class="view"
+      ng-if="!$ctrl.isEditing()"
+  >
+    <input
+        class="toggle"
+        type="checkbox"
+        ng-checked="$ctrl.todo.completed"
+        ng-click="$ctrl.onChange({id: $ctrl.todo.id})"
+    />
+    <label
+        ng-dblclick="$ctrl.handleDoubleClick()"
+        ng-bind="$ctrl.todo.text"
+    ></label>
+    <button
+        class="destroy"
+        ng-click="$ctrl.handleDestroy($ctrl.todo.id)"
+    ></button>
+  </div>
+</li>

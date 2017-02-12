@@ -1,0 +1,23 @@
+<header-component add-todo="$ctrl.addTodo(text)"
+></header-component>
+<main-section
+    todos="$ctrl.todos"
+    filter="$ctrl.filter"
+    has-items="$ctrl.hasItems"
+    are-all-done="$ctrl.areAllDone()"
+    complete-all="$ctrl.completeAll()"
+    complete-todo="$ctrl.completeTodo(id)"
+    delete-todo="$ctrl.deleteTodo(id)"
+    start-edit-todo="$ctrl.startEditTodo(id)"
+    edit-todo="$ctrl.editTodo(id,text)"
+></main-section>
+<footer-component
+    ng-if="$ctrl.hasItems()"
+    completed-count="$ctrl.completedCount"
+    active-count="$ctrl.activeCount"
+    selected-filter="$ctrl.visibilityFilter"
+    on-clear-completed="$ctrl.clearCompleted()"
+    show-all="$ctrl.showAll()"
+    show-active="$ctrl.showActive()"
+    show-completed="$ctrl.showCompleted()"
+></footer-component>
